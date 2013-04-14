@@ -13,9 +13,6 @@
 		1D0B4B96171A5274001FAE40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4B94171A5274001FAE40 /* InfoPlist.strings */; };
 		1D0B4B98171A5274001FAE40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4B97171A5274001FAE40 /* main.m */; };
 		1D0B4B9C171A5274001FAE40 /* FGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4B9B171A5274001FAE40 /* FGAppDelegate.m */; };
-		1D0B4B9E171A5274001FAE40 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4B9D171A5274001FAE40 /* Default.png */; };
-		1D0B4BA0171A5274001FAE40 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4B9F171A5274001FAE40 /* Default@2x.png */; };
-		1D0B4BA2171A5274001FAE40 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BA1171A5274001FAE40 /* Default-568h@2x.png */; };
 		1D0B4BA5171A5274001FAE40 /* FGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4BA4171A5274001FAE40 /* FGViewController.m */; };
 		1D0B4BC7171A5317001FAE40 /* food-menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BC6171A5317001FAE40 /* food-menu.plist */; };
 		1D0B4BCA171A5449001FAE40 /* FGFoodMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4BC9171A5449001FAE40 /* FGFoodMenuCell.m */; };
@@ -33,9 +30,6 @@
 		1D0B4BE6171A5BE7001FAE40 /* FoodieLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE1171A5BE7001FAE40 /* FoodieLaunchImage@2x.png */; };
 		1D0B4BE7171A5BE7001FAE40 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE2171A5BE7001FAE40 /* icon.png */; };
 		1D0B4BE8171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE3171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png */; };
-		1D85A9ED171A5C910073B1B0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D85A9EC171A5C910073B1B0 /* Default.png */; };
-		1D85A9EF171A5C9A0073B1B0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D85A9EE171A5C9A0073B1B0 /* Default@2x.png */; };
-		1D85A9F1171A5C9F0073B1B0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D85A9F0171A5C9F0073B1B0 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +43,6 @@
 		1D0B4B99171A5274001FAE40 /* FoodieGoodie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodieGoodie-Prefix.pch"; sourceTree = "<group>"; };
 		1D0B4B9A171A5274001FAE40 /* FGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGAppDelegate.h; sourceTree = "<group>"; };
 		1D0B4B9B171A5274001FAE40 /* FGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGAppDelegate.m; sourceTree = "<group>"; };
-		1D0B4B9D171A5274001FAE40 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		1D0B4B9F171A5274001FAE40 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		1D0B4BA1171A5274001FAE40 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D0B4BA3171A5274001FAE40 /* FGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGViewController.h; sourceTree = "<group>"; };
 		1D0B4BA4171A5274001FAE40 /* FGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGViewController.m; sourceTree = "<group>"; };
 		1D0B4BC6171A5317001FAE40 /* food-menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "food-menu.plist"; sourceTree = "<group>"; };
@@ -71,9 +62,6 @@
 		1D0B4BE1171A5BE7001FAE40 /* FoodieLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FoodieLaunchImage@2x.png"; sourceTree = "<group>"; };
 		1D0B4BE2171A5BE7001FAE40 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1D0B4BE3171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FoodieLaunchImage-568h@2x.png"; sourceTree = "<group>"; };
-		1D85A9EC171A5C910073B1B0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		1D85A9EE171A5C9A0073B1B0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		1D85A9F0171A5C9F0073B1B0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +81,6 @@
 		1D0B4B7F171A5274001FAE40 = {
 			isa = PBXGroup;
 			children = (
-				1D85A9F0171A5C9F0073B1B0 /* Default-568h@2x.png */,
-				1D85A9EE171A5C9A0073B1B0 /* Default@2x.png */,
-				1D85A9EC171A5C910073B1B0 /* Default.png */,
 				1D0B4BDE171A5BD7001FAE40 /* images */,
 				1D0B4BCF171A5AE0001FAE40 /* food */,
 				1D0B4BB9171A52D0001FAE40 /* resources */,
@@ -146,9 +131,6 @@
 				1D0B4B94171A5274001FAE40 /* InfoPlist.strings */,
 				1D0B4B97171A5274001FAE40 /* main.m */,
 				1D0B4B99171A5274001FAE40 /* FoodieGoodie-Prefix.pch */,
-				1D0B4B9D171A5274001FAE40 /* Default.png */,
-				1D0B4B9F171A5274001FAE40 /* Default@2x.png */,
-				1D0B4BA1171A5274001FAE40 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,9 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D0B4B96171A5274001FAE40 /* InfoPlist.strings in Resources */,
-				1D0B4B9E171A5274001FAE40 /* Default.png in Resources */,
-				1D0B4BA0171A5274001FAE40 /* Default@2x.png in Resources */,
-				1D0B4BA2171A5274001FAE40 /* Default-568h@2x.png in Resources */,
 				1D0B4BC7171A5317001FAE40 /* food-menu.plist in Resources */,
 				1D0B4BCC171A55B9001FAE40 /* FGViewController.xib in Resources */,
 				1D0B4BCE171A5967001FAE40 /* FGFoodMenuCell.xib in Resources */,
@@ -259,9 +238,6 @@
 				1D0B4BE6171A5BE7001FAE40 /* FoodieLaunchImage@2x.png in Resources */,
 				1D0B4BE7171A5BE7001FAE40 /* icon.png in Resources */,
 				1D0B4BE8171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png in Resources */,
-				1D85A9ED171A5C910073B1B0 /* Default.png in Resources */,
-				1D85A9EF171A5C9A0073B1B0 /* Default@2x.png in Resources */,
-				1D85A9F1171A5C9F0073B1B0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
