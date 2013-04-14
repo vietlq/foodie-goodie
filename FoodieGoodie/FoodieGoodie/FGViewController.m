@@ -95,11 +95,21 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Remove the row
-    [tableData removeObjectAtIndex:indexPath.row];
-    
-    // Reload the view
-    [tableView reloadData];
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        // http://stackoverflow.com/questions/1016200/how-can-i-make-deleterowsatindexpaths-work-with-generictableviewcontroller
+        [tableView beginUpdates];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        
+        // Remove the row
+        [tableData removeObjectAtIndex:indexPath.row];
+        
+        // Reload the view
+        //[tableView reloadData];
+        
+        [tableView endUpdates];
+    }
 }
 
 @end
