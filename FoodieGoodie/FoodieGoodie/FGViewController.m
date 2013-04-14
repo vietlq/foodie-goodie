@@ -54,11 +54,6 @@
     
     NSLog(@"indexPath.row = %d", indexPath.row);
     
-    if([tableData count] < indexPath.row + 1)
-    {
-        theRowIndex = [tableData count] - 1;
-    }
-    
     FGFoodMenuCell *cell = (FGFoodMenuCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableId];
     
     if(cell == nil)
