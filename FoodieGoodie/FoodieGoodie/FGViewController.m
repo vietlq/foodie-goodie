@@ -26,7 +26,6 @@
     
     foodMenuPath = [[NSBundle mainBundle] pathForResource:@"food-menu" ofType:@"plist"];
     rootLocalDataPath = [foodMenuPath stringByDeletingLastPathComponent];
-    NSLog(@"foodMenuPath = %@", foodMenuPath);
 }
 
 - (void)viewDidLoad
@@ -51,8 +50,6 @@
 {
     static NSString *simpleTableId = @"FGFoodMenuCell";
     NSInteger theRowIndex = indexPath.row;
-    
-    NSLog(@"indexPath.row = %d", indexPath.row);
     
     FGFoodMenuCell *cell = (FGFoodMenuCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableId];
     
@@ -105,7 +102,6 @@
         
         // Remove the row
         [tableData removeObjectAtIndex:indexPath.row];
-        NSLog(@"len(tableData) = %d", [tableData count]);
         
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
         
