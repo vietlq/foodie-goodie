@@ -15,7 +15,7 @@
 
 @implementation FGViewController
 {
-    NSArray *tableData;
+    NSMutableArray *tableData;
     NSString *foodMenuPath;
     NSString *rootLocalDataPath;
 }
@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    tableData = [[NSArray alloc] initWithContentsOfFile:foodMenuPath];
+    tableData = [[NSMutableArray alloc] initWithContentsOfFile:foodMenuPath];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +95,11 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Remove the row
+    [tableData removeObjectAtIndex:indexPath.row];
     
+    // Reload the view
+    [tableView reloadData];
 }
 
 @end
