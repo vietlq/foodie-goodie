@@ -11,8 +11,8 @@
 @interface FGFoodMenuCell : UITableViewCell
 
 // http://stackoverflow.com/questions/7654573/ios-uitableview-crashes-when-scrolling
-@property (nonatomic, retain) IBOutlet UILabel *labelName;
-@property (nonatomic, retain) IBOutlet UILabel *labelPrepTime;
-@property (nonatomic, retain) IBOutlet UIImageView *imgViewThumbnail;
+@property (nonatomic, weak) IBOutlet UILabel *labelName;
+@property (nonatomic, weak) IBOutlet UILabel *labelPrepTime;
+@property (nonatomic, weak) IBOutlet UIImageView *imgViewThumbnail;
 
 @end

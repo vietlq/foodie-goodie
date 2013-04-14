@@ -15,18 +15,19 @@
 
 @implementation FGViewController
 {
-    NSMutableArray *tableData;
     NSString *foodMenuPath;
     NSString *rootLocalDataPath;
 }
 
+@synthesize tableData;
+
 - (void)loadView
 {
+    [super loadView];
+    
     foodMenuPath = [[NSBundle mainBundle] pathForResource:@"food-menu" ofType:@"plist"];
     rootLocalDataPath = [foodMenuPath stringByDeletingLastPathComponent];
     NSLog(@"foodMenuPath = %@", foodMenuPath);
-    
-    [super loadView];
 }
 
 - (void)viewDidLoad
@@ -50,6 +51,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableId = @"FGFoodMenuCell";
+    NSInteger theRowIndex = indexPath.row;
+    
+    NSLog(@"indexPath.row = %d", indexPath.row);
+    
+    if([tableData count] < indexPath.row + 1)
+    {
+        theRowIndex = [tableData count] - 1;
+    }
     
     FGFoodMenuCell *cell = (FGFoodMenuCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableId];
     
@@ -59,7 +68,7 @@
         cell = [nib objectAtIndex:0];
     }
     
-    NSDictionary *recipeObj = [tableData objectAtIndex:indexPath.row];
+    NSDictionary *recipeObj = [tableData objectAtIndex:theRowIndex];
     //NSString *imgPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:[recipeObj objectForKey:@"imgPath"]];
     NSString *imgPath = [[recipeObj objectForKey:@"imgPath"] lastPathComponent];
     
@@ -100,13 +109,14 @@
         // http://stackoverflow.com/questions/1016200/how-can-i-make-deleterowsatindexpaths-work-with-generictableviewcontroller
         [tableView beginUpdates];
         
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
-        
         // Remove the row
         [tableData removeObjectAtIndex:indexPath.row];
+        NSLog(@"len(tableData) = %d", [tableData count]);
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
         
         // Reload the view
-        //[tableView reloadData];
+        [tableView reloadData];
         
         [tableView endUpdates];
     }

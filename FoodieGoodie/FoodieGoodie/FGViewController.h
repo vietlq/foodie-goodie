@@ -10,4 +10,10 @@
 
 @interface FGViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+{
+    NSMutableArray *tableData;
+}
+
+@property (nonatomic, retain) NSMutableArray *tableData;
+
 @end
