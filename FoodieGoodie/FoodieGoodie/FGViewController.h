@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+// http://stackoverflow.com/questions/9694185/uitableviewcontroller-vs-tableview
 @interface FGViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
-{
-    NSMutableArray *tableData;
-}
-
-@property (nonatomic, retain) NSMutableArray *tableData;
 
 @end

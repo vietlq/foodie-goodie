@@ -15,11 +15,10 @@
 
 @implementation FGViewController
 {
+    NSMutableArray *tableData;
     NSString *foodMenuPath;
     NSString *rootLocalDataPath;
 }
-
-@synthesize tableData;
 
 - (void)loadView
 {
