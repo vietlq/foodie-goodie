@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FGViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FGViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 {
     NSMutableArray *tableData;
