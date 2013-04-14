@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FGViewController : UIViewController
+@interface FGViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

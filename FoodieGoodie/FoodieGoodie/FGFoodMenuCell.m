@@ -10,6 +10,10 @@
 
 @implementation FGFoodMenuCell
 
+@synthesize labelName = _labelName;
+@synthesize labelPrepTime = _labelPrepTime;
+@synthesize imgViewThumbnail = _imgViewThumbnail;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

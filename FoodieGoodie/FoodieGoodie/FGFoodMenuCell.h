@@ -10,4 +10,8 @@
 
 @interface FGFoodMenuCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *labelName;
+@property (nonatomic, weak) IBOutlet UILabel *labelPrepTime;
+@property (nonatomic, weak) IBOutlet UIImageView *imgViewThumbnail;
+
 @end
