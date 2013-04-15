@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D0B4B8C171A5274001FAE40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4B8B171A5274001FAE40 /* UIKit.framework */; };
+		1D0B4B8E171A5274001FAE40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4B8D171A5274001FAE40 /* Foundation.framework */; };
+		1D0B4B90171A5274001FAE40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4B8F171A5274001FAE40 /* CoreGraphics.framework */; };
+		1D0B4B96171A5274001FAE40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4B94171A5274001FAE40 /* InfoPlist.strings */; };
+		1D0B4B98171A5274001FAE40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4B97171A5274001FAE40 /* main.m */; };
+		1D0B4B9C171A5274001FAE40 /* FGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4B9B171A5274001FAE40 /* FGAppDelegate.m */; };
+		1D0B4BA5171A5274001FAE40 /* FGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4BA4171A5274001FAE40 /* FGViewController.m */; };
+		1D0B4BC7171A5317001FAE40 /* food-menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BC6171A5317001FAE40 /* food-menu.plist */; };
+		1D0B4BCA171A5449001FAE40 /* FGFoodMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B4BC9171A5449001FAE40 /* FGFoodMenuCell.m */; };
+		1D0B4BCC171A55B9001FAE40 /* FGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BCB171A55B9001FAE40 /* FGViewController.xib */; };
+		1D0B4BCE171A5967001FAE40 /* FGFoodMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BCD171A5967001FAE40 /* FGFoodMenuCell.xib */; };
+		1D0B4BD7171A5AEE001FAE40 /* ca-kho-to.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD0171A5AEE001FAE40 /* ca-kho-to.jpg */; };
+		1D0B4BD8171A5AEE001FAE40 /* nem-chua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD1171A5AEE001FAE40 /* nem-chua.jpg */; };
+		1D0B4BD9171A5AEE001FAE40 /* bo-kho-soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD2171A5AEE001FAE40 /* bo-kho-soup.jpg */; };
+		1D0B4BDA171A5AEE001FAE40 /* bun-cha-ca.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD3171A5AEE001FAE40 /* bun-cha-ca.jpg */; };
+		1D0B4BDB171A5AEE001FAE40 /* banh-cuon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD4171A5AEE001FAE40 /* banh-cuon.jpg */; };
+		1D0B4BDC171A5AEE001FAE40 /* pho-bo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD5171A5AEE001FAE40 /* pho-bo.jpg */; };
+		1D0B4BDD171A5AEE001FAE40 /* nem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BD6171A5AEE001FAE40 /* nem.jpg */; };
+		1D0B4BE4171A5BE7001FAE40 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BDF171A5BE7001FAE40 /* icon@2x.png */; };
+		1D0B4BE5171A5BE7001FAE40 /* FoodieLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE0171A5BE7001FAE40 /* FoodieLaunchImage.png */; };
+		1D0B4BE6171A5BE7001FAE40 /* FoodieLaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE1171A5BE7001FAE40 /* FoodieLaunchImage@2x.png */; };
+		1D0B4BE7171A5BE7001FAE40 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE2171A5BE7001FAE40 /* icon.png */; };
+		1D0B4BE8171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B4BE3171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D0B4B88171A5274001FAE40 /* FoodieGoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieGoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0B4B8B171A5274001FAE40 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1D0B4B8D171A5274001FAE40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D0B4B8F171A5274001FAE40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D0B4B93171A5274001FAE40 /* FoodieGoodie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FoodieGoodie-Info.plist"; sourceTree = "<group>"; };
+		1D0B4B95171A5274001FAE40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D0B4B97171A5274001FAE40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1D0B4B99171A5274001FAE40 /* FoodieGoodie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodieGoodie-Prefix.pch"; sourceTree = "<group>"; };
+		1D0B4B9A171A5274001FAE40 /* FGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGAppDelegate.h; sourceTree = "<group>"; };
+		1D0B4B9B171A5274001FAE40 /* FGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGAppDelegate.m; sourceTree = "<group>"; };
+		1D0B4BA3171A5274001FAE40 /* FGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGViewController.h; sourceTree = "<group>"; };
+		1D0B4BA4171A5274001FAE40 /* FGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGViewController.m; sourceTree = "<group>"; };
+		1D0B4BC6171A5317001FAE40 /* food-menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "food-menu.plist"; sourceTree = "<group>"; };
+		1D0B4BC8171A5449001FAE40 /* FGFoodMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGFoodMenuCell.h; sourceTree = "<group>"; };
+		1D0B4BC9171A5449001FAE40 /* FGFoodMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGFoodMenuCell.m; sourceTree = "<group>"; };
+		1D0B4BCB171A55B9001FAE40 /* FGViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FGViewController.xib; sourceTree = "<group>"; };
+		1D0B4BCD171A5967001FAE40 /* FGFoodMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FGFoodMenuCell.xib; sourceTree = "<group>"; };
+		1D0B4BD0171A5AEE001FAE40 /* ca-kho-to.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ca-kho-to.jpg"; path = "food/ca-kho-to.jpg"; sourceTree = "<group>"; };
+		1D0B4BD1171A5AEE001FAE40 /* nem-chua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "nem-chua.jpg"; path = "food/nem-chua.jpg"; sourceTree = "<group>"; };
+		1D0B4BD2171A5AEE001FAE40 /* bo-kho-soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bo-kho-soup.jpg"; path = "food/bo-kho-soup.jpg"; sourceTree = "<group>"; };
+		1D0B4BD3171A5AEE001FAE40 /* bun-cha-ca.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bun-cha-ca.jpg"; path = "food/bun-cha-ca.jpg"; sourceTree = "<group>"; };
+		1D0B4BD4171A5AEE001FAE40 /* banh-cuon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "banh-cuon.jpg"; path = "food/banh-cuon.jpg"; sourceTree = "<group>"; };
+		1D0B4BD5171A5AEE001FAE40 /* pho-bo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "pho-bo.jpg"; path = "food/pho-bo.jpg"; sourceTree = "<group>"; };
+		1D0B4BD6171A5AEE001FAE40 /* nem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nem.jpg; path = food/nem.jpg; sourceTree = "<group>"; };
+		1D0B4BDF171A5BE7001FAE40 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1D0B4BE0171A5BE7001FAE40 /* FoodieLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodieLaunchImage.png; sourceTree = "<group>"; };
+		1D0B4BE1171A5BE7001FAE40 /* FoodieLaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FoodieLaunchImage@2x.png"; sourceTree = "<group>"; };
+		1D0B4BE2171A5BE7001FAE40 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1D0B4BE3171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FoodieLaunchImage-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D0B4B85171A5274001FAE40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0B4B8C171A5274001FAE40 /* UIKit.framework in Frameworks */,
+				1D0B4B8E171A5274001FAE40 /* Foundation.framework in Frameworks */,
+				1D0B4B90171A5274001FAE40 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D0B4B7F171A5274001FAE40 = {
+			isa = PBXGroup;
+			children = (
+				1D0B4BDE171A5BD7001FAE40 /* images */,
+				1D0B4BCF171A5AE0001FAE40 /* food */,
+				1D0B4BB9171A52D0001FAE40 /* resources */,
+				1D0B4B91171A5274001FAE40 /* FoodieGoodie */,
+				1D0B4B8A171A5274001FAE40 /* Frameworks */,
+				1D0B4B89171A5274001FAE40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D0B4B89171A5274001FAE40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4B88171A5274001FAE40 /* FoodieGoodie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D0B4B8A171A5274001FAE40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4B8B171A5274001FAE40 /* UIKit.framework */,
+				1D0B4B8D171A5274001FAE40 /* Foundation.framework */,
+				1D0B4B8F171A5274001FAE40 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D0B4B91171A5274001FAE40 /* FoodieGoodie */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4BCD171A5967001FAE40 /* FGFoodMenuCell.xib */,
+				1D0B4BCB171A55B9001FAE40 /* FGViewController.xib */,
+				1D0B4B9A171A5274001FAE40 /* FGAppDelegate.h */,
+				1D0B4B9B171A5274001FAE40 /* FGAppDelegate.m */,
+				1D0B4BA3171A5274001FAE40 /* FGViewController.h */,
+				1D0B4BA4171A5274001FAE40 /* FGViewController.m */,
+				1D0B4BC8171A5449001FAE40 /* FGFoodMenuCell.h */,
+				1D0B4BC9171A5449001FAE40 /* FGFoodMenuCell.m */,
+				1D0B4B92171A5274001FAE40 /* Supporting Files */,
+			);
+			path = FoodieGoodie;
+			sourceTree = "<group>";
+		};
+		1D0B4B92171A5274001FAE40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4B93171A5274001FAE40 /* FoodieGoodie-Info.plist */,
+				1D0B4B94171A5274001FAE40 /* InfoPlist.strings */,
+				1D0B4B97171A5274001FAE40 /* main.m */,
+				1D0B4B99171A5274001FAE40 /* FoodieGoodie-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D0B4BB9171A52D0001FAE40 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4BC6171A5317001FAE40 /* food-menu.plist */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		1D0B4BCF171A5AE0001FAE40 /* food */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4BD0171A5AEE001FAE40 /* ca-kho-to.jpg */,
+				1D0B4BD1171A5AEE001FAE40 /* nem-chua.jpg */,
+				1D0B4BD2171A5AEE001FAE40 /* bo-kho-soup.jpg */,
+				1D0B4BD3171A5AEE001FAE40 /* bun-cha-ca.jpg */,
+				1D0B4BD4171A5AEE001FAE40 /* banh-cuon.jpg */,
+				1D0B4BD5171A5AEE001FAE40 /* pho-bo.jpg */,
+				1D0B4BD6171A5AEE001FAE40 /* nem.jpg */,
+			);
+			name = food;
+			sourceTree = "<group>";
+		};
+		1D0B4BDE171A5BD7001FAE40 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B4BE2171A5BE7001FAE40 /* icon.png */,
+				1D0B4BDF171A5BE7001FAE40 /* icon@2x.png */,
+				1D0B4BE0171A5BE7001FAE40 /* FoodieLaunchImage.png */,
+				1D0B4BE1171A5BE7001FAE40 /* FoodieLaunchImage@2x.png */,
+				1D0B4BE3171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png */,
+			);
+			name = images;
+			path = resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D0B4B87171A5274001FAE40 /* FoodieGoodie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D0B4BAB171A5274001FAE40 /* Build configuration list for PBXNativeTarget "FoodieGoodie" */;
+			buildPhases = (
+				1D0B4B84171A5274001FAE40 /* Sources */,
+				1D0B4B85171A5274001FAE40 /* Frameworks */,
+				1D0B4B86171A5274001FAE40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoodieGoodie;
+			productName = FoodieGoodie;
+			productReference = 1D0B4B88171A5274001FAE40 /* FoodieGoodie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D0B4B80171A5274001FAE40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FG;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Le Quoc Viet";
+			};
+			buildConfigurationList = 1D0B4B83171A5274001FAE40 /* Build configuration list for PBXProject "FoodieGoodie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1D0B4B7F171A5274001FAE40;
+			productRefGroup = 1D0B4B89171A5274001FAE40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D0B4B87171A5274001FAE40 /* FoodieGoodie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D0B4B86171A5274001FAE40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0B4B96171A5274001FAE40 /* InfoPlist.strings in Resources */,
+				1D0B4BC7171A5317001FAE40 /* food-menu.plist in Resources */,
+				1D0B4BCC171A55B9001FAE40 /* FGViewController.xib in Resources */,
+				1D0B4BCE171A5967001FAE40 /* FGFoodMenuCell.xib in Resources */,
+				1D0B4BD7171A5AEE001FAE40 /* ca-kho-to.jpg in Resources */,
+				1D0B4BD8171A5AEE001FAE40 /* nem-chua.jpg in Resources */,
+				1D0B4BD9171A5AEE001FAE40 /* bo-kho-soup.jpg in Resources */,
+				1D0B4BDA171A5AEE001FAE40 /* bun-cha-ca.jpg in Resources */,
+				1D0B4BDB171A5AEE001FAE40 /* banh-cuon.jpg in Resources */,
+				1D0B4BDC171A5AEE001FAE40 /* pho-bo.jpg in Resources */,
+				1D0B4BDD171A5AEE001FAE40 /* nem.jpg in Resources */,
+				1D0B4BE4171A5BE7001FAE40 /* icon@2x.png in Resources */,
+				1D0B4BE5171A5BE7001FAE40 /* FoodieLaunchImage.png in Resources */,
+				1D0B4BE6171A5BE7001FAE40 /* FoodieLaunchImage@2x.png in Resources */,
+				1D0B4BE7171A5BE7001FAE40 /* icon.png in Resources */,
+				1D0B4BE8171A5BE7001FAE40 /* FoodieLaunchImage-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D0B4B84171A5274001FAE40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0B4B98171A5274001FAE40 /* main.m in Sources */,
+				1D0B4B9C171A5274001FAE40 /* FGAppDelegate.m in Sources */,
+				1D0B4BA5171A5274001FAE40 /* FGViewController.m in Sources */,
+				1D0B4BCA171A5449001FAE40 /* FGFoodMenuCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1D0B4B94171A5274001FAE40 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D0B4B95171A5274001FAE40 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D0B4BA9171A5274001FAE40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D0B4BAA171A5274001FAE40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D0B4BAC171A5274001FAE40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FoodieGoodie/FoodieGoodie-Prefix.pch";
+				INFOPLIST_FILE = "FoodieGoodie/FoodieGoodie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1D0B4BAD171A5274001FAE40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FoodieGoodie/FoodieGoodie-Prefix.pch";
+				INFOPLIST_FILE = "FoodieGoodie/FoodieGoodie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D0B4B83171A5274001FAE40 /* Build configuration list for PBXProject "FoodieGoodie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0B4BA9171A5274001FAE40 /* Debug */,
+				1D0B4BAA171A5274001FAE40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D0B4BAB171A5274001FAE40 /* Build configuration list for PBXNativeTarget "FoodieGoodie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0B4BAC171A5274001FAE40 /* Debug */,
+				1D0B4BAD171A5274001FAE40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D0B4B80171A5274001FAE40 /* Project object */;
+}
