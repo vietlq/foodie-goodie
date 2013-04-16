@@ -16,6 +16,7 @@
 {
     NSMutableArray *recipes;
     NSString *foodMenuPath;
+    NSArray *searchResults;
 }
 
 @synthesize localTableView;
@@ -44,6 +45,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(tableView == self.searchDisplayController.searchResultsTableView)
+        return [searchResults count];
+    
     return [recipes count];
 }
 
@@ -61,7 +65,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RecipeCellIdentifier];   
     }
     
-    NSDictionary * dictItem = [NSDictionary dictionaryWithDictionary:[recipes objectAtIndex:indexPath.row]];
+    NSDictionary * dictItem = nil;
+    
+    if(tableView == self.searchDisplayController.searchResultsTableView)
+        dictItem = [NSDictionary dictionaryWithDictionary:[searchResults objectAtIndex:indexPath.row]];
+    else
+        dictItem = [NSDictionary dictionaryWithDictionary:[recipes objectAtIndex:indexPath.row]];
     
     cell.textLabel.text = [dictItem valueForKey:@"name"];
     NSLog(@"cell.textLabel.text = %@", cell.textLabel.text);
@@ -77,6 +86,26 @@
         RecipeDetailViewController *destViewController = segue.destinationViewController;
         destViewController.recipeItem = [recipes objectAtIndex:indexPath.row];
     }
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate 
+                                    predicateWithFormat:@"(name contains[cd] %@)",
+                                    searchText];
+    
+    searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller 
+shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString 
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 @end
