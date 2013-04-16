@@ -6,7 +6,7 @@
 		<key>name</key>
 		<string>Nem</string>
 		<key>imgPath</key>
-		<string>images/nem.jpg</string>
+		<string>nem.jpg</string>
 		<key>prepTime</key>
 		<string>30 min</string>
 	</dict>
@@ -14,7 +14,7 @@
 		<key>name</key>
 		<string>Phở bò</string>
 		<key>imgPath</key>
-		<string>images/pho-bo.jpg</string>
+		<string>pho-bo.jpg</string>
 		<key>prepTime</key>
 		<string>2 hrs</string>
 	</dict>
@@ -22,7 +22,7 @@
 		<key>name</key>
 		<string>Bánh cuốn</string>
 		<key>imgPath</key>
-		<string>images/banh-cuon.jpg</string>
+		<string>banh-cuon.jpg</string>
 		<key>prepTime</key>
 		<string>3 hrs</string>
 	</dict>
@@ -30,7 +30,7 @@
 		<key>name</key>
 		<string>Bún chả cá</string>
 		<key>imgPath</key>
-		<string>images/bun-cha-ca.jpg</string>
+		<string>bun-cha-ca.jpg</string>
 		<key>prepTime</key>
 		<string>2 hrs</string>
 	</dict>
@@ -38,7 +38,7 @@
 		<key>name</key>
 		<string>Bò kho</string>
 		<key>imgPath</key>
-		<string>images/bo-kho-soup.jpg</string>
+		<string>bo-kho-soup.jpg</string>
 		<key>prepTime</key>
 		<string>1 hr</string>
 	</dict>
@@ -46,7 +46,7 @@
 		<key>name</key>
 		<string>Nem chua</string>
 		<key>imgPath</key>
-		<string>images/nem-chua.jpg</string>
+		<string>nem-chua.jpg</string>
 		<key>prepTime</key>
 		<string>3 days</string>
 	</dict>
@@ -54,7 +54,7 @@
 		<key>name</key>
 		<string>Cá kho tộ</string>
 		<key>imgPath</key>
-		<string>images/ca-kho-to.jpg</string>
+		<string>ca-kho-to.jpg</string>
 		<key>prepTime</key>
 		<string>1 hr</string>
 	</dict>

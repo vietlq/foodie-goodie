@@ -19,6 +19,8 @@
 
 @synthesize recipeLabel;
 @synthesize recipeItem;
+@synthesize prepTime;
+@synthesize imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +35,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSLog(@"The recipe item = %@", recipeItem);
+    //
     recipeLabel.text = [recipeItem valueForKey:@"name"];
+    //
+    prepTime.text = @"Thời gian chuẩn bị: ";
+    prepTime.text = [prepTime.text stringByAppendingString:[recipeItem valueForKey:@"prepTime"]];
+    //
+    NSString *imgPath = [[recipeItem objectForKey:@"imgPath"] lastPathComponent];
+    UIImage *image = [UIImage imageNamed:imgPath];
+    imageView.image = image;
 }
 
 - (void)didReceiveMemoryWarning

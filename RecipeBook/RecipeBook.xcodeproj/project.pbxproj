@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1D116D62171DE27B008710D5 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D116D61171DE27B008710D5 /* RecipeDetailViewController.m */; };
+		1D116D7A171DED96008710D5 /* banh-cuon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D73171DED96008710D5 /* banh-cuon.jpg */; };
+		1D116D7B171DED96008710D5 /* bo-kho-soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D74171DED96008710D5 /* bo-kho-soup.jpg */; };
+		1D116D7C171DED96008710D5 /* bun-cha-ca.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D75171DED96008710D5 /* bun-cha-ca.jpg */; };
+		1D116D7D171DED96008710D5 /* ca-kho-to.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D76171DED96008710D5 /* ca-kho-to.jpg */; };
+		1D116D7E171DED96008710D5 /* nem-chua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D77171DED96008710D5 /* nem-chua.jpg */; };
+		1D116D7F171DED96008710D5 /* nem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D78171DED96008710D5 /* nem.jpg */; };
+		1D116D80171DED96008710D5 /* pho-bo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D79171DED96008710D5 /* pho-bo.jpg */; };
 		1D14C528171CC4C0006B2CB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C527171CC4C0006B2CB1 /* UIKit.framework */; };
 		1D14C52A171CC4C0006B2CB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C529171CC4C0006B2CB1 /* Foundation.framework */; };
 		1D14C52C171CC4C0006B2CB1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C52B171CC4C0006B2CB1 /* CoreGraphics.framework */; };
@@ -25,6 +32,13 @@
 /* Begin PBXFileReference section */
 		1D116D60171DE27B008710D5 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		1D116D61171DE27B008710D5 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
+		1D116D73171DED96008710D5 /* banh-cuon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "banh-cuon.jpg"; sourceTree = "<group>"; };
+		1D116D74171DED96008710D5 /* bo-kho-soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bo-kho-soup.jpg"; sourceTree = "<group>"; };
+		1D116D75171DED96008710D5 /* bun-cha-ca.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bun-cha-ca.jpg"; sourceTree = "<group>"; };
+		1D116D76171DED96008710D5 /* ca-kho-to.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ca-kho-to.jpg"; sourceTree = "<group>"; };
+		1D116D77171DED96008710D5 /* nem-chua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nem-chua.jpg"; sourceTree = "<group>"; };
+		1D116D78171DED96008710D5 /* nem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nem.jpg; sourceTree = "<group>"; };
+		1D116D79171DED96008710D5 /* pho-bo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pho-bo.jpg"; sourceTree = "<group>"; };
 		1D14C524171CC4C0006B2CB1 /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D14C527171CC4C0006B2CB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D14C529171CC4C0006B2CB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,9 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D116D72171DED96008710D5 /* food */ = {
+			isa = PBXGroup;
+			children = (
+				1D116D73171DED96008710D5 /* banh-cuon.jpg */,
+				1D116D74171DED96008710D5 /* bo-kho-soup.jpg */,
+				1D116D75171DED96008710D5 /* bun-cha-ca.jpg */,
+				1D116D76171DED96008710D5 /* ca-kho-to.jpg */,
+				1D116D77171DED96008710D5 /* nem-chua.jpg */,
+				1D116D78171DED96008710D5 /* nem.jpg */,
+				1D116D79171DED96008710D5 /* pho-bo.jpg */,
+			);
+			path = food;
+			sourceTree = "<group>";
+		};
 		1D14C51B171CC4C0006B2CB1 = {
 			isa = PBXGroup;
 			children = (
+				1D116D72171DED96008710D5 /* food */,
 				1D14C54A171CC571006B2CB1 /* resources */,
 				1D14C52D171CC4C0006B2CB1 /* RecipeBook */,
 				1D14C526171CC4C0006B2CB1 /* Frameworks */,
@@ -181,6 +210,13 @@
 				1D14C53E171CC4C0006B2CB1 /* Default-568h@2x.png in Resources */,
 				1D14C541171CC4C0006B2CB1 /* MainStoryboard.storyboard in Resources */,
 				1D14C54C171CC5C0006B2CB1 /* food-menu.plist in Resources */,
+				1D116D7A171DED96008710D5 /* banh-cuon.jpg in Resources */,
+				1D116D7B171DED96008710D5 /* bo-kho-soup.jpg in Resources */,
+				1D116D7C171DED96008710D5 /* bun-cha-ca.jpg in Resources */,
+				1D116D7D171DED96008710D5 /* ca-kho-to.jpg in Resources */,
+				1D116D7E171DED96008710D5 /* nem-chua.jpg in Resources */,
+				1D116D7F171DED96008710D5 /* nem.jpg in Resources */,
+				1D116D80171DED96008710D5 /* pho-bo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

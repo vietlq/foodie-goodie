@@ -11,6 +11,8 @@
 @interface RecipeDetailViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *recipeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *prepTime;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) NSDictionary *recipeItem;
 
 @end
