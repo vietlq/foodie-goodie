@@ -15,6 +15,7 @@
 		1D116D7E171DED96008710D5 /* nem-chua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D77171DED96008710D5 /* nem-chua.jpg */; };
 		1D116D7F171DED96008710D5 /* nem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D78171DED96008710D5 /* nem.jpg */; };
 		1D116D80171DED96008710D5 /* pho-bo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D116D79171DED96008710D5 /* pho-bo.jpg */; };
+		1D116D83171DF45E008710D5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D116D82171DF45E008710D5 /* AboutViewController.m */; };
 		1D14C528171CC4C0006B2CB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C527171CC4C0006B2CB1 /* UIKit.framework */; };
 		1D14C52A171CC4C0006B2CB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C529171CC4C0006B2CB1 /* Foundation.framework */; };
 		1D14C52C171CC4C0006B2CB1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C52B171CC4C0006B2CB1 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 		1D116D77171DED96008710D5 /* nem-chua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nem-chua.jpg"; sourceTree = "<group>"; };
 		1D116D78171DED96008710D5 /* nem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nem.jpg; sourceTree = "<group>"; };
 		1D116D79171DED96008710D5 /* pho-bo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pho-bo.jpg"; sourceTree = "<group>"; };
+		1D116D81171DF45E008710D5 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		1D116D82171DF45E008710D5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		1D14C524171CC4C0006B2CB1 /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D14C527171CC4C0006B2CB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D14C529171CC4C0006B2CB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,13 +121,15 @@
 		1D14C52D171CC4C0006B2CB1 /* RecipeBook */ = {
 			isa = PBXGroup;
 			children = (
+				1D14C53F171CC4C0006B2CB1 /* MainStoryboard.storyboard */,
 				1D14C536171CC4C0006B2CB1 /* FGAppDelegate.h */,
 				1D14C537171CC4C0006B2CB1 /* FGAppDelegate.m */,
-				1D14C53F171CC4C0006B2CB1 /* MainStoryboard.storyboard */,
 				1D14C542171CC4C0006B2CB1 /* FGViewController.h */,
 				1D14C543171CC4C0006B2CB1 /* FGViewController.m */,
 				1D116D60171DE27B008710D5 /* RecipeDetailViewController.h */,
 				1D116D61171DE27B008710D5 /* RecipeDetailViewController.m */,
+				1D116D81171DF45E008710D5 /* AboutViewController.h */,
+				1D116D82171DF45E008710D5 /* AboutViewController.m */,
 				1D14C52E171CC4C0006B2CB1 /* Supporting Files */,
 			);
 			path = RecipeBook;
@@ -231,6 +236,7 @@
 				1D14C538171CC4C0006B2CB1 /* FGAppDelegate.m in Sources */,
 				1D14C544171CC4C0006B2CB1 /* FGViewController.m in Sources */,
 				1D116D62171DE27B008710D5 /* RecipeDetailViewController.m in Sources */,
+				1D116D83171DF45E008710D5 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
