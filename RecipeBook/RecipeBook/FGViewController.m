@@ -67,13 +67,16 @@
     
     NSDictionary * dictItem = nil;
     
-    if(tableView == self.searchDisplayController.searchResultsTableView)
-        dictItem = [NSDictionary dictionaryWithDictionary:[searchResults objectAtIndex:indexPath.row]];
+    if([self.searchDisplayController isActive])
+    {
+        dictItem = [NSDictionary dictionaryWithDictionary:[searchResults objectAtIndex:indexPath.row]];   
+    }
     else
-        dictItem = [NSDictionary dictionaryWithDictionary:[recipes objectAtIndex:indexPath.row]];
+    {
+        dictItem = [NSDictionary dictionaryWithDictionary:[recipes objectAtIndex:indexPath.row]];   
+    }
     
     cell.textLabel.text = [dictItem valueForKey:@"name"];
-    NSLog(@"cell.textLabel.text = %@", cell.textLabel.text);
     
     return cell;
 }
@@ -82,14 +85,25 @@
 {
     if([segue.identifier isEqualToString:@"showRecipeDetail"])
     {
-        NSIndexPath *indexPath = [self.localTableView indexPathForSelectedRow];
         RecipeDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.recipeItem = [recipes objectAtIndex:indexPath.row];
+        NSIndexPath *indexPath = nil;
+        
+        if([self.searchDisplayController isActive])
+        {
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            destViewController.recipeItem = [searchResults objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            indexPath = [self.localTableView indexPathForSelectedRow];
+            destViewController.recipeItem = [recipes objectAtIndex:indexPath.row];   
+        }
     }
 }
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
+    // http://stackoverflow.com/questions/958622/using-nspredicate-to-filter-an-nsarray-based-on-nsdictionary-keys
     NSPredicate *resultPredicate = [NSPredicate 
                                     predicateWithFormat:@"(name contains[cd] %@)",
                                     searchText];
@@ -97,8 +111,7 @@
     searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
 }
 
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller 
-shouldReloadTableForSearchString:(NSString *)searchString
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self filterContentForSearchText:searchString 
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
@@ -106,6 +119,14 @@ shouldReloadTableForSearchString:(NSString *)searchString
                                                      selectedScopeButtonIndex]]];
     
     return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self.searchDisplayController isActive])
+    {
+        [self performSegueWithIdentifier:@"showRecipeDetail" sender:self];
+    }
 }
 
 @end

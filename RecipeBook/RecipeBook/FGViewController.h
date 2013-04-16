@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RecipeDetailViewController.h"
 
-@interface FGViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FGViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *localTableView;
 
