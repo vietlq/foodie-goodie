@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSURL *urlAbout = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"about.html" ofType:nil]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:urlAbout];
+    [webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning
