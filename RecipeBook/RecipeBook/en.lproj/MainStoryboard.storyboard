@@ -17,9 +17,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="0UB-LC-241">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="2" id="ecY-AL-uGD"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="rj5-r9-6YR">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="80" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -42,10 +50,20 @@
                     <navigationItem key="navigationItem" title="Recipe Book" id="rpD-jL-u75"/>
                     <connections>
                         <outlet property="localTableView" destination="mQk-9w-BxW" id="pvN-aJ-kGJ"/>
+                        <outlet property="searchDisplayController" destination="Iyr-ri-fMm" id="dVL-9H-1jF"/>
                         <outlet property="view" destination="mQk-9w-BxW" id="DDc-AR-lMO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Iyr-ri-fMm">
+                    <connections>
+                        <outlet property="delegate" destination="2" id="xAC-Of-qbL"/>
+                        <outlet property="searchBar" destination="0UB-LC-241" id="tus-XM-X8j"/>
+                        <outlet property="searchContentsController" destination="2" id="DJu-pm-5qP"/>
+                        <outlet property="searchResultsDataSource" destination="2" id="EdN-Ic-6uL"/>
+                        <outlet property="searchResultsDelegate" destination="2" id="2fW-mn-CIW"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1165" y="19"/>
         </scene>
