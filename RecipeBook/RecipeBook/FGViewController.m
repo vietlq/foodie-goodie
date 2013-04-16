@@ -18,6 +18,8 @@
     NSString *foodMenuPath;
 }
 
+@synthesize localTableView;
+
 - (void)loadView
 {
     [super loadView];
@@ -65,6 +67,16 @@
     NSLog(@"cell.textLabel.text = %@", cell.textLabel.text);
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showRecipeDetail"])
+    {
+        NSIndexPath *indexPath = [self.localTableView indexPathForSelectedRow];
+        RecipeDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.recipeItem = [recipes objectAtIndex:indexPath.row];
+    }
 }
 
 @end

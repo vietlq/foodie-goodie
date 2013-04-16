@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RecipeDetailViewController.h"
 
 @interface FGViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView *localTableView;
 
 @end

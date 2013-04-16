@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D116D62171DE27B008710D5 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D116D61171DE27B008710D5 /* RecipeDetailViewController.m */; };
 		1D14C528171CC4C0006B2CB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C527171CC4C0006B2CB1 /* UIKit.framework */; };
 		1D14C52A171CC4C0006B2CB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C529171CC4C0006B2CB1 /* Foundation.framework */; };
 		1D14C52C171CC4C0006B2CB1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D14C52B171CC4C0006B2CB1 /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D116D60171DE27B008710D5 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		1D116D61171DE27B008710D5 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		1D14C524171CC4C0006B2CB1 /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D14C527171CC4C0006B2CB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D14C529171CC4C0006B2CB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,8 @@
 				1D14C53F171CC4C0006B2CB1 /* MainStoryboard.storyboard */,
 				1D14C542171CC4C0006B2CB1 /* FGViewController.h */,
 				1D14C543171CC4C0006B2CB1 /* FGViewController.m */,
+				1D116D60171DE27B008710D5 /* RecipeDetailViewController.h */,
+				1D116D61171DE27B008710D5 /* RecipeDetailViewController.m */,
 				1D14C52E171CC4C0006B2CB1 /* Supporting Files */,
 			);
 			path = RecipeBook;
@@ -189,6 +194,7 @@
 				1D14C534171CC4C0006B2CB1 /* main.m in Sources */,
 				1D14C538171CC4C0006B2CB1 /* FGAppDelegate.m in Sources */,
 				1D14C544171CC4C0006B2CB1 /* FGViewController.m in Sources */,
+				1D116D62171DE27B008710D5 /* RecipeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +319,7 @@
 				1D14C549171CC4C0006B2CB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

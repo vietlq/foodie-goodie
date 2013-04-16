@@ -27,7 +27,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="qGO-QT-B7f" kind="push" id="bOO-kc-Vgl"/>
+                                            <segue destination="qGO-QT-B7f" kind="push" identifier="showRecipeDetail" id="bOO-kc-Vgl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -41,6 +41,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe Book" id="rpD-jL-u75"/>
                     <connections>
+                        <outlet property="localTableView" destination="mQk-9w-BxW" id="pvN-aJ-kGJ"/>
                         <outlet property="view" destination="mQk-9w-BxW" id="DDc-AR-lMO"/>
                     </connections>
                 </viewController>
@@ -48,16 +49,28 @@
             </objects>
             <point key="canvasLocation" x="639" y="19"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="LEI-U7-mVj">
             <objects>
-                <viewController id="qGO-QT-B7f" sceneMemberID="viewController">
+                <viewController id="qGO-QT-B7f" customClass="RecipeDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SL7-Pd-dj6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dB1-bU-v8I">
+                                <rect key="frame" x="20" y="20" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="poE-SX-LW4"/>
+                    <connections>
+                        <outlet property="recipeLabel" destination="dB1-bU-v8I" id="Igk-GF-Yu2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5i-u1-cJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,6 +98,15 @@
     <classes>
         <class className="FGViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FGViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="localTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RecipeDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecipeDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="recipeLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
