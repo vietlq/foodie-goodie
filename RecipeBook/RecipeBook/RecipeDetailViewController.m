@@ -35,8 +35,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSLog(@"The recipe item = %@", recipeItem);
-    //
     recipeLabel.text = [recipeItem valueForKey:@"name"];
     //
     prepTime.text = @"Thời gian chuẩn bị: ";
