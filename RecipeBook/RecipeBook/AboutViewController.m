@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //
+    self.title = @"Nothing beats great food";
+    //
     NSURL *urlAbout = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"about.html" ofType:nil]];
     NSURLRequest *request = [NSURLRequest requestWithURL:urlAbout];
     [webView loadRequest:request];

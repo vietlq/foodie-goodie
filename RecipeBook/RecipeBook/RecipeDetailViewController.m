@@ -17,7 +17,7 @@
     
 }
 
-@synthesize recipeItem;
+@synthesize recipe;
 @synthesize prepTime;
 @synthesize imageView;
 
@@ -34,11 +34,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title = [recipeItem valueForKey:@"name"];
+    self.title = recipe.name;
     //
-    prepTime.text = [recipeItem valueForKey:@"prepTime"];
+    prepTime.text = recipe.prepTime;
     //
-    NSString *imgPath = [[recipeItem objectForKey:@"imgPath"] lastPathComponent];
+    NSString *imgPath = [recipe.imgPath lastPathComponent];
     UIImage *image = [UIImage imageNamed:imgPath];
     imageView.image = image;
 }

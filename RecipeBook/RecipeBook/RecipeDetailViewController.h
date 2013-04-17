@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FGRecipe.h"
 
 @interface RecipeDetailViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *prepTime;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) NSDictionary *recipeItem;
+@property (nonatomic, strong) FGRecipe *recipe;
 
 @end

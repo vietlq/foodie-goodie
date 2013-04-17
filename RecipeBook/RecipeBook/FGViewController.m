@@ -7,6 +7,7 @@
 //
 
 #import "FGViewController.h"
+#import "FGRecipe.h"
 
 @interface FGViewController ()
 
@@ -14,6 +15,7 @@
 
 @implementation FGViewController
 {
+    NSArray *initialRecipes;
     NSMutableArray *recipes;
     NSString *foodMenuPath;
     NSArray *searchResults;
@@ -33,7 +35,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    recipes = [[NSMutableArray alloc] initWithContentsOfFile:foodMenuPath];
+    initialRecipes = [NSArray arrayWithContentsOfFile:foodMenuPath];
+    recipes = [[NSMutableArray alloc] init];
+    
+    for(NSDictionary * recipeDict in initialRecipes)
+    {
+        [recipes addObject:[FGRecipe recipeFromDictionary:recipeDict]];
+    }
+    
     NSLog(@"Number of recipes: %d", [recipes count]);
 }
 
@@ -65,18 +74,18 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RecipeCellIdentifier];   
     }
     
-    NSDictionary * dictItem = nil;
+    FGRecipe * recipe = nil;
     
     if([self.searchDisplayController isActive])
     {
-        dictItem = [NSDictionary dictionaryWithDictionary:[searchResults objectAtIndex:indexPath.row]];   
+        recipe = [searchResults objectAtIndex:indexPath.row];
     }
     else
     {
-        dictItem = [NSDictionary dictionaryWithDictionary:[recipes objectAtIndex:indexPath.row]];   
+        recipe = [recipes objectAtIndex:indexPath.row];
     }
     
-    cell.textLabel.text = [dictItem valueForKey:@"name"];
+    cell.textLabel.text = recipe.name;
     
     return cell;
 }
@@ -91,12 +100,12 @@
         if([self.searchDisplayController isActive])
         {
             indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            destViewController.recipeItem = [searchResults objectAtIndex:indexPath.row];
+            destViewController.recipe = [searchResults objectAtIndex:indexPath.row];
         }
         else
         {
             indexPath = [self.localTableView indexPathForSelectedRow];
-            destViewController.recipeItem = [recipes objectAtIndex:indexPath.row];   
+            destViewController.recipe = [recipes objectAtIndex:indexPath.row];   
         }
     }
 }
