@@ -57,15 +57,32 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (NSString *)trim:(NSString *)inputString
+{
+    return [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 - (IBAction)save:(id)sender
 {
+    NSString *name = [self trim:self.txtFieldName.text];
+    NSString *version = [self trim:self.txtFieldVersion.text];
+    NSString *company = [self trim:self.txtFieldCompany.text];
+    
+    if(([name length] < 1) || ([company length] < 1))
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid input" message:@"The Device Name and\nCompany must not be blank" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+        
+        return;
+    }
+    
     NSManagedObjectContext *context = [self managedObjectContext];
     
     // Create a new managed object
     NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
-    [newDevice setValue:self.txtFieldName.text forKey:@"name"];
-    [newDevice setValue:self.txtFieldVersion.text forKey:@"version"];
-    [newDevice setValue:self.txtFieldCompany.text forKey:@"company"];
+    [newDevice setValue:name forKey:@"name"];
+    [newDevice setValue:version forKey:@"version"];
+    [newDevice setValue:company forKey:@"company"];
     
     NSError *error = nil;
     
