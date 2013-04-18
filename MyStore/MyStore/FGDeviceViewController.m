@@ -85,4 +85,25 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Delete the cell in the delete mode
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [tableView beginUpdates];
+        
+        // Delete the object from the table view
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        // Delete the object from the persistent store
+        NSManagedObjectContext *context = [self managedObjectContext];
+        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
+        // Delete the object from the array of devices
+        [self.devices removeObjectAtIndex:indexPath.row];
+        
+        [tableView endUpdates];
+        
+        [tableView reloadData];
+    }
+}
+
 @end
