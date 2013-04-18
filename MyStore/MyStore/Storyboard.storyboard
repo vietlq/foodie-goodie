@@ -39,7 +39,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="Vlq-hQ-TwN" kind="modal" identifier="segueUpdateDevice" trigger="accessoryAction" id="oom-r2-juu"/>
+                                    <segue destination="Vlq-hQ-TwN" kind="modal" identifier="segueUpdateDevice" id="EAc-yb-JAf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,6 +157,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oom-r2-juu"/>
+        <segue reference="EAc-yb-JAf"/>
     </inferredMetricsTieBreakers>
 </document>

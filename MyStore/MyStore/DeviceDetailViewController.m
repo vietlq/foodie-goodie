@@ -13,6 +13,10 @@
 @end
 
 @implementation DeviceDetailViewController
+{
+    NSManagedObject *_device;
+    NSString *_segueName;
+}
 
 @synthesize txtFieldName;
 @synthesize txtFieldVersion;
@@ -31,6 +35,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    if(nil != _device)
+    {
+        self.txtFieldName.text = [_device valueForKey:@"name"];
+        self.txtFieldVersion.text = [_device valueForKey:@"version"];
+        self.txtFieldCompany.text = [_device valueForKey:@"company"];   
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,11 +89,15 @@
     
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    // Create a new managed object
-    NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
-    [newDevice setValue:name forKey:@"name"];
-    [newDevice setValue:version forKey:@"version"];
-    [newDevice setValue:company forKey:@"company"];
+    // Create a new managed object only on add
+    if(! [_segueName isEqualToString:@"segueUpdateDevice"])
+    {
+        _device = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
+    }
+    
+    [_device setValue:name forKey:@"name"];
+    [_device setValue:version forKey:@"version"];
+    [_device setValue:company forKey:@"company"];
     
     NSError *error = nil;
     
@@ -92,7 +107,22 @@
         NSLog(@"Cannot save! Error: %@ %@", error, [error localizedDescription]);
     }
     
+    _device = nil;
+    _segueName = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareDeviceDetails:(NSManagedObject *)device
+{
+    _device = device;
+    
+    // Check for null
+    if(_device == nil)
+    {
+        return;
+    }
+    
+    _segueName = @"segueUpdateDevice";
 }
 
 @end

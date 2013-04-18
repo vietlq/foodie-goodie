@@ -7,6 +7,7 @@
 //
 
 #import "FGDeviceViewController.h"
+#import "DeviceDetailViewController.h"
 
 @interface FGDeviceViewController ()
 
@@ -38,6 +39,9 @@
     // Fetch the devices from persistent data store
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
+    // Flush immediately
+    [context setStalenessInterval:0.0];
+    // Obtain all devices
     self.devices = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
@@ -108,15 +112,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[self performSegueWithIdentifier:@"segueUpdateDevice" sender:[tableView cellForRowAtIndexPath:indexPath]];
     [self performSegueWithIdentifier:@"segueUpdateDevice" sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"segueUpdateDevice"])
     {
+        NSIndexPath *indexPath = nil;
+        DeviceDetailViewController *destViewController = segue.destinationViewController;
         
+        indexPath = [self.tableView indexPathForSelectedRow];
+        
+        [destViewController prepareDeviceDetails:[self.devices objectAtIndex:indexPath.row]];
     }
 }
 

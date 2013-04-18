@@ -17,4 +17,6 @@
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
 
+- (void)prepareDeviceDetails:(NSManagedObject *)device;
+
 @end
