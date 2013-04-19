@@ -94,13 +94,22 @@
     // Delete the cell in the delete mode
     if(editingStyle == UITableViewCellEditingStyleDelete)
     {
+        // Delete the object from the persistent store
+        NSManagedObjectContext *context = [self managedObjectContext];
+        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
+        
+        NSError *error;
+        if(! [context save:&error])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Could not delete" message:@"Could not delete the requested row.\nTry again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+            return;
+        }
+        
         [tableView beginUpdates];
         
         // Delete the object from the table view
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-        // Delete the object from the persistent store
-        NSManagedObjectContext *context = [self managedObjectContext];
-        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
         // Delete the object from the array of devices
         [self.devices removeObjectAtIndex:indexPath.row];
         
