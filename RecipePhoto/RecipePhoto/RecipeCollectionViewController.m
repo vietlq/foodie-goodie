@@ -29,7 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    recipePhotos = [NSArray arrayWithObjects:@"noodle_with_bbq_pork.jpg", @"instant_noodle_with_egg.jpg", @"green_tea.jpg", @"angry_birds_cake.jpg", @"thai_shrimp_cake.jpg", @"japanese_noodle_with_pork.jpg", @"vegetable_curry.jpg", @"starbucks_coffee.jpg", @"creme_brelee.jpg", @"full_breakfast.jpg", @"mushroom_risotto.jpg", @"ham_and_cheese_panini.jpg", @"egg_benedict.jpg", @"hamburger.jpg", @"ham_and_egg_sandwich.jpg", @"white_chocolate_donut.jpg", nil];
+    NSArray *mainDishes = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg", nil];
+    NSArray *drinkDesserts = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"green_tea.jpg", @"starbucks_coffee.jpg", @"white_chocolate_donut.jpg", nil];
+    recipePhotos = [NSArray arrayWithObjects:mainDishes, drinkDesserts, nil];
+    
+    // Setting the section margin
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    // Top, right, bottom, left => Just like the order of CSS margins
+    flowLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,9 +45,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return [recipePhotos count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [[recipePhotos objectAtIndex:section] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -52,7 +64,7 @@
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-    imageView.image = [UIImage imageNamed:[recipePhotos objectAtIndex:indexPath.row]];
+    imageView.image = [UIImage imageNamed:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
     
     return cell;
 }
