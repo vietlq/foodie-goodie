@@ -49,6 +49,8 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
+    
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
     imageView.image = [UIImage imageNamed:[recipePhotos objectAtIndex:indexPath.row]];
     

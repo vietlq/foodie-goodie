@@ -26,15 +26,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOm-Cp-icr"/>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOm-Cp-icr">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="HF3-Kn-k26"/>
+                                                <constraint firstAttribute="height" constant="72" id="cP4-ci-wOf"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="hOm-Cp-icr" firstAttribute="top" secondItem="gSo-qZ-Sxg" secondAttribute="top" type="default" id="DgM-Zj-kdy"/>
-                                    <constraint firstItem="hOm-Cp-icr" firstAttribute="bottom" secondItem="gSo-qZ-Sxg" secondAttribute="bottom" type="default" id="dbv-KP-qPs"/>
-                                    <constraint firstItem="hOm-Cp-icr" firstAttribute="leading" secondItem="gSo-qZ-Sxg" secondAttribute="leading" type="default" id="n02-h4-TM2"/>
-                                    <constraint firstItem="hOm-Cp-icr" firstAttribute="trailing" secondItem="gSo-qZ-Sxg" secondAttribute="trailing" type="default" id="rbS-tt-Gfb"/>
+                                    <constraint firstItem="hOm-Cp-icr" firstAttribute="centerX" secondItem="gSo-qZ-Sxg" secondAttribute="centerX" type="default" id="SZQ-v9-0C2"/>
+                                    <constraint firstAttribute="bottom" secondItem="hOm-Cp-icr" secondAttribute="bottom" constant="20" type="default" id="XpB-v6-wAm"/>
                                 </constraints>
                             </collectionViewCell>
                         </cells>
