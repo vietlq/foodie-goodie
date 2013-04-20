@@ -7,6 +7,7 @@
 //
 
 #import "RecipeCollectionViewController.h"
+#import "SectionHeaderView.h"
 
 @interface RecipeCollectionViewController ()
 {
@@ -67,6 +68,30 @@
     imageView.image = [UIImage imageNamed:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
     
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableView = nil;
+    
+    if(kind == UICollectionElementKindSectionHeader)
+    {
+        SectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        NSString *title = [[NSString alloc] initWithFormat:@"Recipe Group #%d", (indexPath.row + 1)];
+        headerView.title.text = title;
+        UIImage *headerImage = [UIImage imageNamed:@"header_banner.png"];
+        headerView.backgroundImage.image = headerImage;
+        
+        reusableView = headerView;
+    }
+    else if (kind == UICollectionElementKindSectionFooter)
+    {
+        SectionHeaderView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+        
+        reusableView = footerView;
+    }
+    
+    return reusableView;
 }
 
 @end

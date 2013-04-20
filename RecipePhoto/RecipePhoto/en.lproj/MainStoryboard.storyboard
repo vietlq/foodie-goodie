@@ -14,13 +14,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dcq-V2-8Ac">
                             <size key="itemSize" width="100" height="100"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FoodCell" id="gSo-qZ-Sxg">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -41,6 +41,47 @@
                                 </constraints>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HeaderView" reuseIdentifier="HeaderView" id="1F0-dM-oY4" customClass="SectionHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="header_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="818-pU-run"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMb-In-Edt">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="JQA-81-Dfp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="818-pU-run" firstAttribute="top" secondItem="1F0-dM-oY4" secondAttribute="top" type="default" id="EAG-Xy-xm8"/>
+                                <constraint firstItem="JMb-In-Edt" firstAttribute="centerY" secondItem="818-pU-run" secondAttribute="centerY" type="default" id="Ftt-LD-5W9"/>
+                                <constraint firstItem="818-pU-run" firstAttribute="leading" secondItem="1F0-dM-oY4" secondAttribute="leading" type="default" id="KwY-Rr-7KL"/>
+                                <constraint firstItem="JMb-In-Edt" firstAttribute="leading" secondItem="1F0-dM-oY4" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QWZ-Fh-RkG"/>
+                                <constraint firstItem="818-pU-run" firstAttribute="bottom" secondItem="1F0-dM-oY4" secondAttribute="bottom" type="default" id="R1M-2D-bcI"/>
+                                <constraint firstAttribute="trailing" secondItem="JMb-In-Edt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kuU-78-av6"/>
+                                <constraint firstItem="818-pU-run" firstAttribute="trailing" secondItem="1F0-dM-oY4" secondAttribute="trailing" type="default" id="uDI-jq-UyA"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="backgroundImage" destination="818-pU-run" id="OfI-fz-PBw"/>
+                                <outlet property="title" destination="JMb-In-Edt" id="AEu-LG-Vvv"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FooterView" reuseIdentifier="FooterView" id="8ZX-RV-Lxz" customClass="SectionHeaderView">
+                            <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="footer_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="uPI-an-G4c"/>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="uPI-an-G4c" firstAttribute="top" secondItem="8ZX-RV-Lxz" secondAttribute="top" type="default" id="5ae-75-TbJ"/>
+                                <constraint firstItem="uPI-an-G4c" firstAttribute="trailing" secondItem="8ZX-RV-Lxz" secondAttribute="trailing" type="default" id="I4u-ee-JK5"/>
+                                <constraint firstItem="uPI-an-G4c" firstAttribute="leading" secondItem="8ZX-RV-Lxz" secondAttribute="leading" type="default" id="ife-YJ-OWT"/>
+                                <constraint firstItem="uPI-an-G4c" firstAttribute="bottom" secondItem="8ZX-RV-Lxz" secondAttribute="bottom" type="default" id="uB2-Av-ViG"/>
+                            </constraints>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="l8l-7e-aHP" id="2tU-6V-Tfk"/>
                             <outlet property="delegate" destination="l8l-7e-aHP" id="iHD-2C-Cz8"/>
@@ -52,12 +93,23 @@
             <point key="canvasLocation" x="81" y="-10"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="footer_banner.png" width="640" height="100"/>
+        <image name="header_banner.png" width="640" height="98"/>
+    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="RecipeCollectionViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecipeCollectionViewController.h"/>
+        </class>
+        <class className="SectionHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
