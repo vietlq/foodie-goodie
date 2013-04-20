@@ -77,7 +77,7 @@
     if(kind == UICollectionElementKindSectionHeader)
     {
         SectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        NSString *title = [[NSString alloc] initWithFormat:@"Recipe Group #%d", (indexPath.row + 1)];
+        NSString *title = [[NSString alloc] initWithFormat:@"Recipe Group #%d", (indexPath.section + 1)];
         headerView.title.text = title;
         UIImage *headerImage = [UIImage imageNamed:@"header_banner.png"];
         headerView.backgroundImage.image = headerImage;
