@@ -8,6 +8,7 @@
 
 #import "RecipeCollectionViewController.h"
 #import "SectionHeaderView.h"
+#import "RecipeDetailViewController.h"
 
 @interface RecipeCollectionViewController ()
 {
@@ -92,6 +93,19 @@
     }
     
     return reusableView;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"segueRecipeDetail"])
+    {
+        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+        RecipeDetailViewController *destView = segue.destinationViewController;
+        destView.recipeImageName = [[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        // Remember to deselect the cell
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    }
 }
 
 @end

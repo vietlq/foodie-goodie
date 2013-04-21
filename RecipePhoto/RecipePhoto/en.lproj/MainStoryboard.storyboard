@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="bottom" secondItem="hOm-Cp-icr" secondAttribute="bottom" constant="20" type="default" id="XpB-v6-wAm"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="CM4-rV-D8U" kind="modal" id="3sb-jo-WjR"/>
+                                    <segue destination="CM4-rV-D8U" kind="modal" identifier="segueRecipeDetail" id="3sb-jo-WjR"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
