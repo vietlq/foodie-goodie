@@ -46,7 +46,7 @@
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
     // Initialize the values
     shareEnabled = NO;
-    selectedRecipes = nil;
+    selectedRecipes = [NSMutableArray array];
     // By default the Cancel Button must not be present
     self.navigationItem.leftBarButtonItem = nil;
 }
@@ -132,15 +132,23 @@
 {
     if(shareEnabled)
     {
+        /*
+         Invoke sharing to FB
+         */
         shareEnabled = NO;
         shareButton.title = @"Share";
+        shareButton.enabled = YES;
         self.navigationItem.leftBarButtonItem = nil;
+        [self.collectionView setAllowsMultipleSelection:NO];
+        [selectedRecipes removeAllObjects];
     }
     else
     {
         shareEnabled = YES;
         shareButton.title = @"Upload";
+        shareButton.enabled = NO;
         self.navigationItem.leftBarButtonItem = cancelButton;
+        [self.collectionView setAllowsMultipleSelection:YES];
     }
 }
 
@@ -148,7 +156,33 @@
 {
     shareEnabled = NO;
     shareButton.title = @"Share";
+    shareButton.enabled = YES;
     self.navigationItem.leftBarButtonItem = nil;
+    [self.collectionView setAllowsMultipleSelection:NO];
+    [selectedRecipes removeAllObjects];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(shareEnabled)
+    {
+        shareButton.enabled = YES;
+        [selectedRecipes addObject:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+        NSLog(@"selectedRecipes count = %d", [selectedRecipes count]);
+    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(shareEnabled)
+    {
+        [selectedRecipes removeObject:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+        NSLog(@"selectedRecipes count = %d", [selectedRecipes count]);
+        if([selectedRecipes count] < 1)
+        {
+            shareButton.enabled = NO;
+        }   
+    }
 }
 
 @end
