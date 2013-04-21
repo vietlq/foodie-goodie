@@ -39,6 +39,9 @@
                                     <constraint firstItem="hOm-Cp-icr" firstAttribute="centerX" secondItem="gSo-qZ-Sxg" secondAttribute="centerX" type="default" id="SZQ-v9-0C2"/>
                                     <constraint firstAttribute="bottom" secondItem="hOm-Cp-icr" secondAttribute="bottom" constant="20" type="default" id="XpB-v6-wAm"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="CM4-rV-D8U" kind="modal" id="3sb-jo-WjR"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HeaderView" reuseIdentifier="HeaderView" id="1F0-dM-oY4" customClass="SectionHeaderView">
@@ -94,6 +97,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPk-RI-yNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607" y="-10"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ltV-AL-bhj">
+            <objects>
+                <viewController id="CM4-rV-D8U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="knB-5j-IFt">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-N6-H0x">
+                                <items>
+                                    <navigationItem title="Recipe" id="71B-pI-zGI">
+                                        <barButtonItem key="rightBarButtonItem" title="Close" id="y4k-kI-qRH"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-YU-aQo">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0pQ-6U-eaP"/>
+                                    <constraint firstAttribute="height" constant="225" id="bKz-hI-SN1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0GV-N6-H0x" firstAttribute="leading" secondItem="knB-5j-IFt" secondAttribute="leading" type="default" id="8mU-1b-Bmw"/>
+                            <constraint firstItem="0GV-N6-H0x" firstAttribute="top" secondItem="knB-5j-IFt" secondAttribute="top" type="default" id="FtZ-gk-Gr0"/>
+                            <constraint firstItem="9rx-YU-aQo" firstAttribute="centerX" secondItem="0GV-N6-H0x" secondAttribute="centerX" type="default" id="gfk-PG-vK9"/>
+                            <constraint firstItem="0GV-N6-H0x" firstAttribute="trailing" secondItem="knB-5j-IFt" secondAttribute="trailing" type="default" id="us3-uC-7Ey"/>
+                            <constraint firstItem="9rx-YU-aQo" firstAttribute="top" secondItem="knB-5j-IFt" secondAttribute="top" constant="54" id="yJz-9o-YoE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lkh-RB-Tvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-10"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="luY-pd-b5r">
