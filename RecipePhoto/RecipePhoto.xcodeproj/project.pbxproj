@@ -38,6 +38,7 @@
 		1D0AA23617227E5600177EA1 /* footer_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AA23417227E5600177EA1 /* footer_banner.png */; };
 		1D0AA23717227E5600177EA1 /* header_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AA23517227E5600177EA1 /* header_banner.png */; };
 		1D0AA23A17227EA000177EA1 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA23917227EA000177EA1 /* SectionHeaderView.m */; };
+		1D0AA23D17237FAA00177EA1 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA23C17237FAA00177EA1 /* RecipeDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,8 @@
 		1D0AA23517227E5600177EA1 /* header_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header_banner.png; path = food/header_banner.png; sourceTree = SOURCE_ROOT; };
 		1D0AA23817227EA000177EA1 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		1D0AA23917227EA000177EA1 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		1D0AA23B17237FAA00177EA1 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		1D0AA23C17237FAA00177EA1 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				1D0AA1E017226CDA00177EA1 /* RecipeCollectionViewController.m */,
 				1D0AA23817227EA000177EA1 /* SectionHeaderView.h */,
 				1D0AA23917227EA000177EA1 /* SectionHeaderView.m */,
+				1D0AA23B17237FAA00177EA1 /* RecipeDetailViewController.h */,
+				1D0AA23C17237FAA00177EA1 /* RecipeDetailViewController.m */,
 				1D0AA1C317226BA400177EA1 /* Supporting Files */,
 			);
 			path = RecipePhoto;
@@ -277,6 +282,7 @@
 				1D0AA1CD17226BA400177EA1 /* FGAppDelegate.m in Sources */,
 				1D0AA1E117226CDA00177EA1 /* RecipeCollectionViewController.m in Sources */,
 				1D0AA23A17227EA000177EA1 /* SectionHeaderView.m in Sources */,
+				1D0AA23D17237FAA00177EA1 /* RecipeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

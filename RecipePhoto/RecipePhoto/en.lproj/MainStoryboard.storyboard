@@ -91,17 +91,17 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Recipe Book" id="Hwg-rF-BLr">
-                        <barButtonItem key="rightBarButtonItem" title="Upload" id="3IM-Hi-WMK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="3IM-Hi-WMK"/>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPk-RI-yNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607" y="-10"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="ltV-AL-bhj">
             <objects>
-                <viewController id="CM4-rV-D8U" sceneMemberID="viewController">
+                <viewController id="CM4-rV-D8U" customClass="RecipeDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knB-5j-IFt">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,7 +109,11 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-N6-H0x">
                                 <items>
                                     <navigationItem title="Recipe" id="71B-pI-zGI">
-                                        <barButtonItem key="rightBarButtonItem" title="Close" id="y4k-kI-qRH"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Close" id="y4k-kI-qRH">
+                                            <connections>
+                                                <action selector="close:" destination="CM4-rV-D8U" id="uag-4t-3Kv"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -129,6 +133,9 @@
                             <constraint firstItem="9rx-YU-aQo" firstAttribute="top" secondItem="knB-5j-IFt" secondAttribute="top" constant="54" id="yJz-9o-YoE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recipeImageView" destination="9rx-YU-aQo" id="quH-dx-aZv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lkh-RB-Tvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,6 +170,13 @@
         </class>
         <class className="RecipeCollectionViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecipeCollectionViewController.h"/>
+        </class>
+        <class className="RecipeDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecipeDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="outlet" name="recipeImageView" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="SectionHeaderView" superclassName="UICollectionReusableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionHeaderView.h"/>
