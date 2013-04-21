@@ -47,6 +47,7 @@
     // Initialize the values
     shareEnabled = NO;
     selectedRecipes = nil;
+    // By default the Cancel Button must not be present
     self.navigationItem.leftBarButtonItem = nil;
 }
 
@@ -115,6 +116,16 @@
         // Remember to deselect the cell
         [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:@"segueRecipeDetail"])
+    {
+        return (! shareEnabled);
+    }
+    
+    return YES;
 }
 
 - (IBAction)shareButtonTouched:(id)sender
