@@ -15,6 +15,7 @@
     NSArray *recipePhotos;
     BOOL shareEnabled;
     NSMutableArray *selectedRecipes;
+    NSMutableArray *selectedIndexPaths;
 }
 @end
 
@@ -47,6 +48,7 @@
     // Initialize the values
     shareEnabled = NO;
     selectedRecipes = [NSMutableArray array];
+    selectedIndexPaths = [NSMutableArray array];
     // By default the Cancel Button must not be present
     self.navigationItem.leftBarButtonItem = nil;
 }
@@ -129,6 +131,22 @@
     return YES;
 }
 
+- (void)restoreCollectionView
+{
+    shareEnabled = NO;
+    shareButton.title = @"Share";
+    shareButton.enabled = YES;
+    self.navigationItem.leftBarButtonItem = nil;
+    // http://www.raywenderlich.com/22417/beginning-uicollectionview-in-ios-6-part-22
+    [self.collectionView setAllowsMultipleSelection:NO];
+    [selectedRecipes removeAllObjects];
+    // Clear the collection view from selected cells as well
+    for(NSIndexPath *indexPath in selectedIndexPaths)
+    {
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];   
+    }   
+}
+
 - (IBAction)shareButtonTouched:(id)sender
 {
     if(shareEnabled)
@@ -136,13 +154,7 @@
         /*
          Invoke sharing to FB
          */
-        shareEnabled = NO;
-        shareButton.title = @"Share";
-        shareButton.enabled = YES;
-        self.navigationItem.leftBarButtonItem = nil;
-        // http://www.raywenderlich.com/22417/beginning-uicollectionview-in-ios-6-part-22
-        [self.collectionView setAllowsMultipleSelection:NO];
-        [selectedRecipes removeAllObjects];
+        [self restoreCollectionView];
     }
     else
     {
@@ -157,13 +169,7 @@
 
 - (IBAction)cancelButtonTouched:(id)sender
 {
-    shareEnabled = NO;
-    shareButton.title = @"Share";
-    shareButton.enabled = YES;
-    self.navigationItem.leftBarButtonItem = nil;
-    // http://www.raywenderlich.com/22417/beginning-uicollectionview-in-ios-6-part-22
-    [self.collectionView setAllowsMultipleSelection:NO];
-    [selectedRecipes removeAllObjects];
+    [self restoreCollectionView];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -172,6 +178,7 @@
     {
         shareButton.enabled = YES;
         [selectedRecipes addObject:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+        [selectedIndexPaths addObject:indexPath];
     }
 }
 
@@ -180,6 +187,7 @@
     if(shareEnabled)
     {
         [selectedRecipes removeObject:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
+        [selectedIndexPaths removeObject:indexPath];
         if([selectedRecipes count] < 1)
         {
             shareButton.enabled = NO;
