@@ -13,10 +13,15 @@
 @interface RecipeCollectionViewController ()
 {
     NSArray *recipePhotos;
+    BOOL shareEnabled;
+    NSMutableArray *selectedRecipes;
 }
 @end
 
 @implementation RecipeCollectionViewController
+
+@synthesize shareButton;
+@synthesize cancelButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +44,10 @@
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     // Top, right, bottom, left => Just like the order of CSS margins
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
+    // Initialize the values
+    shareEnabled = NO;
+    selectedRecipes = nil;
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,6 +115,29 @@
         // Remember to deselect the cell
         [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
+}
+
+- (IBAction)shareButtonTouched:(id)sender
+{
+    if(shareEnabled)
+    {
+        shareEnabled = NO;
+        shareButton.title = @"Share";
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+    else
+    {
+        shareEnabled = YES;
+        shareButton.title = @"Upload";
+        self.navigationItem.leftBarButtonItem = cancelButton;
+    }
+}
+
+- (IBAction)cancelButtonTouched:(id)sender
+{
+    shareEnabled = NO;
+    shareButton.title = @"Share";
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 @end
