@@ -145,7 +145,8 @@
     for(NSIndexPath *indexPath in selectedIndexPaths)
     {
         [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];   
-    }   
+    }
+    [selectedIndexPaths removeAllObjects];
 }
 
 - (IBAction)shareButtonTouched:(id)sender
