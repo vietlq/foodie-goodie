@@ -167,11 +167,12 @@
                     [socialController addImage:[UIImage imageNamed:recipePhoto]];
                 }
                 
-                [self presentViewController:socialController animated:YES completion:nil];
+                [self presentViewController:socialController animated:YES completion:^{
+                    // Clean up
+                    [self restoreCollectionView];
+                }];
             }
         }
-        // Clean up
-        [self restoreCollectionView];
     }
     else
     {
