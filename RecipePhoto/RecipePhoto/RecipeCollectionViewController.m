@@ -102,7 +102,7 @@
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         RecipeDetailViewController *destView = segue.destinationViewController;
-        destView.recipeImageName = [[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        [destView setRecipeImageName:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
         // Remember to deselect the cell
         [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }

@@ -13,9 +13,11 @@
 @end
 
 @implementation RecipeDetailViewController
+{
+    NSString *_recipeImageName;
+}
 
 @synthesize recipeImageView;
-@synthesize recipeImageName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +32,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    recipeImageView.image = [UIImage imageNamed:recipeImageName];
+    recipeImageView.image = [UIImage imageNamed:_recipeImageName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +44,11 @@
 - (IBAction)close:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setRecipeImageName:(NSString *)recipeImageName
+{
+    _recipeImageName = recipeImageName;
 }
 
 @end

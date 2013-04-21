@@ -11,7 +11,8 @@
 @interface RecipeDetailViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIImageView *recipeImageView;
-@property (nonatomic, weak) NSString *recipeImageName;
+
+- (void)setRecipeImageName:(NSString *)recipeImageName;
 
 - (IBAction)close:(id)sender;
 
