@@ -40,6 +40,7 @@
 		1D0AA23A17227EA000177EA1 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA23917227EA000177EA1 /* SectionHeaderView.m */; };
 		1D0AA23D17237FAA00177EA1 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA23C17237FAA00177EA1 /* RecipeDetailViewController.m */; };
 		1D0AA23F17243BD400177EA1 /* selected-photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AA23E17243BD400177EA1 /* selected-photo-frame.png */; };
+		1D0AA24117243F1700177EA1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0AA24017243F1700177EA1 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		1D0AA23B17237FAA00177EA1 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		1D0AA23C17237FAA00177EA1 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		1D0AA23E17243BD400177EA1 /* selected-photo-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "selected-photo-frame.png"; path = "food/selected-photo-frame.png"; sourceTree = SOURCE_ROOT; };
+		1D0AA24017243F1700177EA1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0AA24117243F1700177EA1 /* Social.framework in Frameworks */,
 				1D0AA1BD17226BA400177EA1 /* UIKit.framework in Frameworks */,
 				1D0AA1BF17226BA400177EA1 /* Foundation.framework in Frameworks */,
 				1D0AA1C117226BA400177EA1 /* CoreGraphics.framework in Frameworks */,
@@ -121,6 +124,7 @@
 		1D0AA1BB17226BA400177EA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D0AA24017243F1700177EA1 /* Social.framework */,
 				1D0AA1BC17226BA400177EA1 /* UIKit.framework */,
 				1D0AA1BE17226BA400177EA1 /* Foundation.framework */,
 				1D0AA1C017226BA400177EA1 /* CoreGraphics.framework */,
@@ -387,6 +391,7 @@
 				GCC_PREFIX_HEADER = "RecipePhoto/RecipePhoto-Prefix.pch";
 				INFOPLIST_FILE = "RecipePhoto/RecipePhoto-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

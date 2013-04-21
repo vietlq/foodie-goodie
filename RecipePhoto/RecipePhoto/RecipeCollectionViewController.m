@@ -9,6 +9,7 @@
 #import "RecipeCollectionViewController.h"
 #import "SectionHeaderView.h"
 #import "RecipeDetailViewController.h"
+#import <Social/Social.h>
 
 @interface RecipeCollectionViewController ()
 {
@@ -154,6 +155,22 @@
         /*
          Invoke sharing to FB
          */
+        if([selectedRecipes count] > 0)
+        {
+            if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+            {
+                SLComposeViewController *socialController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                
+                [socialController setInitialText:@"Yummy foodies =P~"];
+                for(NSString *recipePhoto in selectedRecipes)
+                {
+                    [socialController addImage:[UIImage imageNamed:recipePhoto]];
+                }
+                
+                [self presentViewController:socialController animated:YES completion:nil];
+            }
+        }
+        // Clean up
         [self restoreCollectionView];
     }
     else
