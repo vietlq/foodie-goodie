@@ -74,6 +74,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"selected-photo-frame.png"]];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
     imageView.image = [UIImage imageNamed:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
@@ -139,6 +140,7 @@
         shareButton.title = @"Share";
         shareButton.enabled = YES;
         self.navigationItem.leftBarButtonItem = nil;
+        // http://www.raywenderlich.com/22417/beginning-uicollectionview-in-ios-6-part-22
         [self.collectionView setAllowsMultipleSelection:NO];
         [selectedRecipes removeAllObjects];
     }
@@ -148,6 +150,7 @@
         shareButton.title = @"Upload";
         shareButton.enabled = NO;
         self.navigationItem.leftBarButtonItem = cancelButton;
+        // http://www.raywenderlich.com/22417/beginning-uicollectionview-in-ios-6-part-22
         [self.collectionView setAllowsMultipleSelection:YES];
     }
 }
@@ -158,6 +161,7 @@
     shareButton.title = @"Share";
     shareButton.enabled = YES;
     self.navigationItem.leftBarButtonItem = nil;
+    // http://www.raywenderlich.com/22417/beginning-uicollectionview-in-ios-6-part-22
     [self.collectionView setAllowsMultipleSelection:NO];
     [selectedRecipes removeAllObjects];
 }
@@ -168,7 +172,6 @@
     {
         shareButton.enabled = YES;
         [selectedRecipes addObject:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-        NSLog(@"selectedRecipes count = %d", [selectedRecipes count]);
     }
 }
 
@@ -177,7 +180,6 @@
     if(shareEnabled)
     {
         [selectedRecipes removeObject:[[recipePhotos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]];
-        NSLog(@"selectedRecipes count = %d", [selectedRecipes count]);
         if([selectedRecipes count] < 1)
         {
             shareButton.enabled = NO;
