@@ -31,13 +31,61 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Observer to catch changes from iCloud
+    NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storeDidChange:) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:store];
+    
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    
+    // Observer to catch the local changes
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddNewNote:) name:@"New Note" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSArray *)notes
+{
+    if(_notes)
+    {
+        return _notes;
+    }
+    
+    _notes = [[[NSUbiquitousKeyValueStore defaultStore] arrayForKey:@"NoteTestAvailableNotes"] mutableCopy];
+    if(! _notes) _notes = [NSMutableArray array];
+    
+    return _notes;
+}
+
+#pragma mark - Observe "New Note" event
+
+- (void)didAddNewNote:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    NSString *noteStr = [userInfo valueForKey:@"Note"];
+    [self.notes addObject:noteStr];
+    
+    // Update data on the iCloud
+    [[NSUbiquitousKeyValueStore defaultStore] setArray:self.notes forKey:@"NoteTestAvailableNotes"];
+    
+    // Reload the table view to show changes
+    [self.tableView reloadData];
+}
+
+#pragma mark - Observer
+
+- (void)storeDidChange:(NSNotification *)notification
+{
+    // Retrieve the changes from iCloud
+    _notes = [[[NSUbiquitousKeyValueStore defaultStore] arrayForKey:@"NoteTestAvailableNotes"] mutableCopy];
+    
+    // Reload the table view to show changes
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -49,15 +97,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [_notes count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"NoteCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSString *strNote = [self.notes objectAtIndex:indexPath.row];
+    cell.textLabel.text = strNote;
     
     return cell;
 }

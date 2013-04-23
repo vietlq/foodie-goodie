@@ -10,4 +10,6 @@
 
 @interface NoteListViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *notes;
+
 @end
