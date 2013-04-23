@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="uxE-F6-0qx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="heT-oo-hbe">
     <dependencies>
         <deployment version="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Note List View Controller-->
         <scene sceneID="UQz-lw-nJP">
             <objects>
-                <tableViewController id="ShO-Bd-PnB" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOm-Pr-ZEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="ShO-Bd-PnB" customClass="NoteListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aoD-2E-rCe">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="GJA-wA-wPH" style="IBUITableViewCellStyleDefault" id="EI6-yd-AJ2">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" textLabel="GJA-wA-wPH" style="IBUITableViewCellStyleDefault" id="EI6-yd-AJ2">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -39,21 +40,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="X71-Bo-T55">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="XuK-0g-mbK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XuK-0g-mbK">
                             <connections>
                                 <segue destination="OP8-Bx-TTR" kind="modal" identifier="segueAddNote" id="mwA-f4-SeY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zOm-Pr-ZEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="-20"/>
+            <point key="canvasLocation" x="1206" y="-20"/>
         </scene>
-        <!--Table View Controller - Add Note-->
+        <!--Add Note View Controller - Add Note-->
         <scene sceneID="c1I-re-Ke6">
             <objects>
-                <tableViewController id="MAc-xT-UKH" sceneMemberID="viewController">
+                <tableViewController id="MAc-xT-UKH" customClass="AddNoteViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Zs9-KN-JpO">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,31 +87,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Note" id="8CL-Jh-Smo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kMb-3U-1fW"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZIq-C1-sq9"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kMb-3U-1fW">
+                            <connections>
+                                <action selector="cancel:" destination="MAc-xT-UKH" id="0KS-XP-6PO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZIq-C1-sq9">
+                            <connections>
+                                <action selector="save:" destination="MAc-xT-UKH" id="33f-N7-Tch"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtFieldNote" destination="2Lj-HN-Iul" id="aNw-AX-TKc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfq-9c-6Oe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-20"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ga2-vi-rzH">
-            <objects>
-                <navigationController id="uxE-F6-0qx" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ves-8d-05q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ShO-Bd-PnB" kind="relationship" relationship="rootViewController" id="xSb-KO-L4B"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9HI-rY-Kl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="163" y="-20"/>
+            <point key="canvasLocation" x="2196" y="-20"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RYJ-fG-bYa">
@@ -129,9 +122,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fN6-SN-uK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="-20"/>
+            <point key="canvasLocation" x="1666" y="-20"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dng-j3-UCD">
+            <objects>
+                <navigationController id="heT-oo-hbe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Sr-Ok-usc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ShO-Bd-PnB" kind="relationship" relationship="rootViewController" id="jNr-F7-c9g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIy-pR-tjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680" y="-20"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddNoteViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddNoteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="txtFieldNote" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NoteListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteListViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

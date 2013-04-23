@@ -17,6 +17,8 @@
 		1D0AA2631725FB0800177EA1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AA2621725FB0800177EA1 /* Default@2x.png */; };
 		1D0AA2651725FB0800177EA1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AA2641725FB0800177EA1 /* Default-568h@2x.png */; };
 		1D0AA26D1725FBAE00177EA1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AA26C1725FBAE00177EA1 /* Storyboard.storyboard */; };
+		1D0AA27017260A0400177EA1 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA26F17260A0400177EA1 /* AddNoteViewController.m */; };
+		1D0AA27317260D4400177EA1 /* NoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA27217260D4400177EA1 /* NoteListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		1D0AA2641725FB0800177EA1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D0AA26B1725FB3100177EA1 /* iCloudNoteTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iCloudNoteTest.entitlements; sourceTree = "<group>"; };
 		1D0AA26C1725FBAE00177EA1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1D0AA26E17260A0400177EA1 /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		1D0AA26F17260A0400177EA1 /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		1D0AA27117260D4400177EA1 /* NoteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListViewController.h; sourceTree = "<group>"; };
+		1D0AA27217260D4400177EA1 /* NoteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				1D0AA26C1725FBAE00177EA1 /* Storyboard.storyboard */,
 				1D0AA25D1725FB0800177EA1 /* FGAppDelegate.h */,
 				1D0AA25E1725FB0800177EA1 /* FGAppDelegate.m */,
+				1D0AA27117260D4400177EA1 /* NoteListViewController.h */,
+				1D0AA27217260D4400177EA1 /* NoteListViewController.m */,
+				1D0AA26E17260A0400177EA1 /* AddNoteViewController.h */,
+				1D0AA26F17260A0400177EA1 /* AddNoteViewController.m */,
 				1D0AA2551725FB0800177EA1 /* Supporting Files */,
 			);
 			path = iCloudNoteTest;
@@ -173,6 +183,8 @@
 			files = (
 				1D0AA25B1725FB0800177EA1 /* main.m in Sources */,
 				1D0AA25F1725FB0800177EA1 /* FGAppDelegate.m in Sources */,
+				1D0AA27017260A0400177EA1 /* AddNoteViewController.m in Sources */,
+				1D0AA27317260D4400177EA1 /* NoteListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
