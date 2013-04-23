@@ -31,7 +31,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     // Observer to catch changes from iCloud
     NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
@@ -109,6 +109,23 @@
     cell.textLabel.text = strNote;
     
     return cell;
+}
+
+// Override to support conditional editing of the table view
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+// Override to support editing the table view
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.notes removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [[NSUbiquitousKeyValueStore defaultStore] setArray:self.notes forKey:@"NoteTestAvailableNotes"];
+    }
 }
 
 /*
