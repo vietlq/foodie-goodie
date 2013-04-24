@@ -23,6 +23,15 @@
     return self;
 }
 
+- (void)loadView
+{
+    // Force to load from iCloud
+    _notes = [[[NSUbiquitousKeyValueStore defaultStore] arrayForKey:@"NoteTestAvailableNotes"] mutableCopy];
+    
+    // Load the view
+    [super loadView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
